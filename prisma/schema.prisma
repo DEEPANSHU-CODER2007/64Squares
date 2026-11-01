@@ -1,0 +1,45 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  email        String?  @unique
+  passwordHash String
+  ratingBullet Int      @default(1200)
+  ratingBlitz  Int      @default(1200)
+  ratingRapid  Int      @default(1200)
+  gamesPlayed  Int      @default(0)
+  wins         Int      @default(0)
+  losses       Int      @default(0)
+  draws        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  gamesAsWhite Game[]   @relation("WhiteGames")
+  gamesAsBlack Game[]   @relation("BlackGames")
+}
+
+model Game {
+  id            String   @id @default(cuid())
+  mode          String   // 'computer', 'friend', 'online'
+  timeControl   String
+  whitePlayerId String?
+  blackPlayerId String?
+  whitePlayer   User?    @relation("WhiteGames", fields: [whitePlayerId], references: [id])
+  blackPlayer   User?    @relation("BlackGames", fields: [blackPlayerId], references: [id])
+  whiteGuest    String?
+  blackGuest    String?
+  initialFen    String   @default("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
+  finalFen      String
+  pgn           String
+  result        String   // '1-0', '0-1', '1/2-1/2'
+  reason        String   // 'checkmate', 'resignation', 'timeout', etc.
+  createdAt     DateTime @default(now())
+}
+

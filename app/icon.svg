@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
+  <defs>
+    <linearGradient id="iconKnightGrad" x1="6" y1="4" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9DE45C" />
+      <stop offset="0.6" stop-color="#81B64C" />
+      <stop offset="1" stop-color="#557F39" />
+    </linearGradient>
+  </defs>
+
+  <rect width="36" height="36" rx="8" fill="#111412" />
+
+  <!-- Base platform -->
+  <rect x="7" y="27" width="22" height="3" rx="1.5" fill="url(#iconKnightGrad)" />
+
+  <!-- Stylized Modern Knight Silhouette -->
+  <path
+    d="M10 27V23.5C10 21 12 19.5 13 18C10.5 17 9.5 14.5 9 12C8.5 9 10.5 6 15 5C19 4 23 5.5 25 8C27 10.5 27 13.5 25.5 17.5C24.5 20 26 23 26 27H10Z"
+    fill="url(#iconKnightGrad)"
+  />
+
+  <!-- Mane precision cutout -->
+  <path
+    d="M19 6.5C18 9 18.5 12 21 14C23 15.5 24 17 24.5 19.5"
+    stroke="#111412"
+    stroke-width="1.75"
+    stroke-linecap="round"
+  />
+
+  <!-- Modern angled snout cut -->
+  <path
+    d="M10 13.5L14 14"
+    stroke="#111412"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+
+  <!-- Knight eye -->
+  <circle cx="15.5" cy="9.5" r="1.3" fill="#111412" />
+</svg>
