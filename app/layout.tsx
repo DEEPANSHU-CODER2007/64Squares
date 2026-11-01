@@ -4,20 +4,12 @@ import { Navbar } from '@/components/Navbar';
 import { BottomNav } from '@/components/BottomNav';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { InstallModal } from '@/components/InstallModal';
 
 export const metadata: Metadata = {
   title: '64Squares — Think Ahead. Play Smart.',
   description: 'A clean, modern, distraction-free chess platform. Play Stockfish AI, challenge friends in private rooms, solve tactics, and analyze games.',
-  manifest: '/manifest.json',
   icons: {
     icon: '/icon.svg',
-    apple: '/icons/icon-192.png',
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'black-translucent',
-    title: '64Squares',
   },
 };
 
@@ -60,7 +52,6 @@ export default function RootLayout({
           <main className="flex-1 flex flex-col pb-16 md:pb-0">{children}</main>
           <BottomNav />
           <Footer />
-          <InstallModal />
         </ThemeProvider>
       </body>
     </html>
