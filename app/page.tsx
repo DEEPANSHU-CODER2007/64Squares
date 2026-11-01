@@ -83,8 +83,8 @@ export default function HomePage() {
               </button>
             </div>
 
-            {/* Chessboard Container - Edge to Edge on Mobile */}
-            <div className="w-full aspect-square">
+            {/* Chessboard Container - Edge to Edge on Mobile with extended phone length */}
+            <div className="w-full aspect-[8/8.8] sm:aspect-square">
               <Chessboard
                 game={previewGame}
                 onMove={handlePreviewMove}

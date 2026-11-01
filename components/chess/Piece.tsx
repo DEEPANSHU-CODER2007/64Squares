@@ -26,7 +26,7 @@ export const Piece: React.FC<PieceProps> = ({ type, color, className = '', size 
       height={300}
       draggable={false}
       style={size !== '100%' ? { width: size, height: size } : undefined}
-      className={`w-full h-full object-contain pointer-events-none select-none transition-transform ${className}`}
+      className={`w-full h-full object-contain pointer-events-none select-none transition-transform scale-105 sm:scale-100 ${className}`}
       loading="eager"
       decoding="async"
     />

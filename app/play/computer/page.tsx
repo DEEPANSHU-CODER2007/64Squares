@@ -340,7 +340,7 @@ export default function PlayComputerPage() {
     : lastMove;
 
   return (
-    <div className="flex-1 max-w-6xl mx-auto px-1 sm:px-4 py-1.5 sm:py-4 md:py-6 w-full flex flex-col justify-center">
+    <div className="flex-1 max-w-6xl mx-auto px-0 sm:px-4 py-0 sm:py-4 md:py-6 w-full flex flex-col justify-center">
       {/* Setup screen if game not started */}
       {!isGameStarted ? (
         <div className="max-w-lg mx-auto py-8 sm:py-12">
@@ -448,9 +448,9 @@ export default function PlayComputerPage() {
           </div>
         </div>
       ) : (
-        /* Active Game Arena - Mobile First Focus (matching screenshot shape) */
-        <div className="flex flex-col items-center justify-center max-w-[580px] mx-auto w-full px-0 sm:px-1 animate-in fade-in duration-150">
-          <div className="w-full space-y-1.5 sm:space-y-2">
+        /* Active Game Arena - Mobile First Focus (matching screenshot shape with extended phone length) */
+        <div className="flex flex-col items-center justify-center max-w-full sm:max-w-[580px] mx-auto w-full px-0 sm:px-1 animate-in fade-in duration-150">
+          <div className="w-full space-y-1 sm:space-y-2">
             {/* Opponent Card (Top) - Exactly like user's screenshot */}
             <PlayerCard
               name={`Stockfish (${difficulty})`}
@@ -465,8 +465,8 @@ export default function PlayComputerPage() {
               }
             />
 
-            {/* Board Container */}
-            <div className="relative w-full aspect-square">
+            {/* Board Container - Extended length on phone */}
+            <div className="relative w-full aspect-[8/8.8] sm:aspect-square">
               <Chessboard
                 game={game}
                 orientation={orientation}

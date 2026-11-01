@@ -183,7 +183,7 @@ export const Chessboard: React.FC<ChessboardProps> = ({
 
   return (
     <div
-      className={`relative select-none w-full aspect-square rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 ${
+      className={`relative select-none w-full aspect-[8/8.8] sm:aspect-square rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 ${
         isCheckmate
           ? 'ring-4 ring-red-600 shadow-[0_0_50px_rgba(220,38,38,0.7)] animate-board-shake bg-[#1a0a0a]'
           : 'border border-black/15 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.25)]'

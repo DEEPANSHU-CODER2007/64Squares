@@ -1,8 +1,17 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  // In match (Play Computer or Play Friend), remove footer completely
+  const isMatch = pathname.startsWith('/play/computer') || pathname.startsWith('/play/friend');
+  if (isMatch) return null;
+
   return (
     <footer className="border-t border-[#E2E2D9] dark:border-[#303831] bg-[#F1F0EB] dark:bg-[#111412] py-8 text-[#626B64] dark:text-[#A5ADA5] text-xs transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
