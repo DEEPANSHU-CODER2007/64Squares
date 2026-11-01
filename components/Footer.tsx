@@ -30,6 +30,13 @@ export const Footer: React.FC = () => {
             <Link href="/analysis" className="hover:text-[#557F39] dark:hover:text-[#81B64C] transition-colors">
               Analysis
             </Link>
+            <a
+              href="/downloads/64Squares.apk"
+              download="64Squares.apk"
+              className="inline-flex items-center gap-1 text-[#557F39] dark:text-[#81B64C] font-bold hover:underline"
+            >
+              <span>Download APK</span>
+            </a>
           </div>
         </div>
 

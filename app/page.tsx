@@ -61,14 +61,14 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 w-full">
+    <div className="flex-1 flex flex-col justify-center max-w-6xl mx-auto px-1.5 sm:px-6 py-3 sm:py-8 w-full">
       {/* Chess.com Inspired Hero Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Left Column: Centerpiece Chessboard Preview */}
-        <div className="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1">
-          <div className="w-full max-w-[500px]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
+        {/* Left Column: Centerpiece Chessboard Preview (Top on Phone, Left on Desktop) */}
+        <div className="lg:col-span-7 flex flex-col items-center justify-center order-1 lg:order-1 w-full">
+          <div className="w-full max-w-full sm:max-w-[580px] lg:max-w-[620px] mx-auto">
             {/* Top Bar for Board Preview */}
-            <div className="flex items-center justify-between px-2 mb-2.5 text-xs text-[#626B64] dark:text-[#A5ADA5]">
+            <div className="flex items-center justify-between px-1.5 mb-2 text-xs text-[#626B64] dark:text-[#A5ADA5]">
               <div className="flex items-center gap-1.5 font-bold text-[11px] uppercase tracking-wider text-[#557F39] dark:text-[#81B64C]">
                 <span className="w-2 h-2 rounded-full bg-[#81B64C] animate-pulse" />
                 <span>Interactive Board (Move White)</span>
@@ -83,22 +83,22 @@ export default function HomePage() {
               </button>
             </div>
 
-            {/* Chessboard Container */}
-            <div className="w-full max-w-[500px] mx-auto">
+            {/* Chessboard Container - Edge to Edge on Mobile */}
+            <div className="w-full aspect-square">
               <Chessboard
                 game={previewGame}
                 onMove={handlePreviewMove}
                 lastMove={lastMove}
                 interactive={true}
                 playerColor="w"
-                showCoordinates={false}
+                showCoordinates={true}
               />
             </div>
           </div>
         </div>
 
         {/* Right Column: Action Column */}
-        <div className="lg:col-span-5 flex flex-col justify-center space-y-6 text-center lg:text-left order-1 lg:order-2">
+        <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-2">
           {/* Main Headline */}
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#1C201D] dark:text-[#F4F3EA] leading-tight">

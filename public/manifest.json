@@ -1,0 +1,26 @@
+{
+  "name": "64Squares Chess",
+  "short_name": "64Squares",
+  "description": "Fast, distraction-free chess platform. Play Stockfish AI, challenge friends, solve puzzles, and analyze games.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#111412",
+  "theme_color": "#111412",
+  "categories": ["games", "entertainment", "sports"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -295,7 +295,7 @@ export default function PlayFriendDirectPage() {
     gameOver.result === '1-0' ? whitePlayer : gameOver.result === '0-1' ? blackPlayer : undefined;
 
   return (
-    <div className="flex-1 max-w-6xl mx-auto px-4 py-4 md:py-8 w-full flex flex-col justify-center">
+    <div className="flex-1 max-w-6xl mx-auto px-1 sm:px-4 py-1.5 sm:py-4 md:py-8 w-full flex flex-col justify-center">
       {!isGameStarted ? (
         /* ==================== CLEAN MATCH SETUP VIEW ==================== */
         <div className="max-w-xl mx-auto w-full py-4 sm:py-8 animate-in fade-in duration-200">
@@ -446,7 +446,7 @@ export default function PlayFriendDirectPage() {
         </div>
       ) : (
         /* ==================== ACTIVE GAME ARENA (Mobile First Focus) ==================== */
-        <div className="flex flex-col items-center justify-center max-w-[540px] mx-auto w-full px-1 animate-in fade-in duration-150">
+        <div className="flex flex-col items-center justify-center max-w-[580px] mx-auto w-full px-0 sm:px-1 animate-in fade-in duration-150">
           <div className="w-full space-y-1.5 sm:space-y-2">
             {/* Top Player Card (Black or Opponent) - Exactly like user's screenshot */}
             <PlayerCard
@@ -473,7 +473,7 @@ export default function PlayFriendDirectPage() {
                 lastMove={lastMove}
                 moveBadge={lastMoveBadge}
                 onMove={handleMove}
-                showCoordinates={false}
+                showCoordinates={true}
               />
             </div>
 

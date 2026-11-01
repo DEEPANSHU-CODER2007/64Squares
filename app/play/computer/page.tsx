@@ -340,7 +340,7 @@ export default function PlayComputerPage() {
     : lastMove;
 
   return (
-    <div className="flex-1 max-w-6xl mx-auto px-4 py-4 md:py-6 w-full">
+    <div className="flex-1 max-w-6xl mx-auto px-1 sm:px-4 py-1.5 sm:py-4 md:py-6 w-full flex flex-col justify-center">
       {/* Setup screen if game not started */}
       {!isGameStarted ? (
         <div className="max-w-lg mx-auto py-8 sm:py-12">
@@ -449,7 +449,7 @@ export default function PlayComputerPage() {
         </div>
       ) : (
         /* Active Game Arena - Mobile First Focus (matching screenshot shape) */
-        <div className="flex flex-col items-center justify-center max-w-[540px] mx-auto w-full px-1 animate-in fade-in duration-150">
+        <div className="flex flex-col items-center justify-center max-w-[580px] mx-auto w-full px-0 sm:px-1 animate-in fade-in duration-150">
           <div className="w-full space-y-1.5 sm:space-y-2">
             {/* Opponent Card (Top) - Exactly like user's screenshot */}
             <PlayerCard
@@ -476,7 +476,7 @@ export default function PlayComputerPage() {
                 lastMove={lastMove}
                 moveBadge={lastMoveBadge}
                 onMove={handlePlayerMove}
-                showCoordinates={false}
+                showCoordinates={true}
               />
 
               {isAiThinking && (

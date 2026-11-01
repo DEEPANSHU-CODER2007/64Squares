@@ -233,7 +233,7 @@ export default function AnalysisPage() {
 
   return (
     <div
-      className="flex-1 max-w-7xl mx-auto px-4 py-6 w-full relative"
+      className="flex-1 max-w-7xl mx-auto px-1 sm:px-4 py-3 sm:py-6 w-full relative"
       onDragOver={(e) => {
         e.preventDefault();
         setIsDraggingFile(true);

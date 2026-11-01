@@ -116,7 +116,7 @@ export default function PuzzlesPage() {
       {/* Confetti burst on solve */}
       <Confetti active={status === 'solved'} durationMs={3500} />
 
-      <div className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
+      <div className="flex-1 max-w-7xl mx-auto px-1 sm:px-4 py-3 sm:py-8 w-full">
         {/* Page Header */}
         <div className="text-center max-w-xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F1F0EB] dark:bg-[#1D231F] border border-[#E2E2D9] dark:border-[#303831] text-xs font-semibold text-[#557F39] dark:text-[#81B64C] mb-2 shadow-2xs">

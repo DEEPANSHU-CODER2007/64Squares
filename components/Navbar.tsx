@@ -11,6 +11,7 @@ import {
   GraduationCap,
   Search,
   Settings,
+  Download,
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -53,8 +54,18 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* Right Action: Quick Play + Theme Toggle & Settings */}
-        <div className="flex items-center gap-2">
+        {/* Right Action: Install/APK + Quick Play + Theme Toggle & Settings */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Install / Download APK Trigger */}
+          <button
+            onClick={() => window.dispatchEvent(new Event('open-install-modal'))}
+            title="Install 64Squares App or Download APK"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-[#81B64C]/15 hover:bg-[#81B64C]/25 border border-[#81B64C]/40 text-[#557F39] dark:text-[#81B64C] text-xs font-bold transition-all active:scale-95"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span className="hidden xs:inline">Install App</span>
+          </button>
+
           <Link
             href="/play"
             className="chess-btn-green hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-black"

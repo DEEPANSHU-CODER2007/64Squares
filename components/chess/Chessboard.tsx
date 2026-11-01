@@ -35,7 +35,7 @@ export const Chessboard: React.FC<ChessboardProps> = ({
   bestMoveArrow = null,
   moveBadge = null,
   onMove,
-  showCoordinates = false,
+  showCoordinates = true,
   showLegalMoves = true,
   customSquareStyles = {},
 }) => {
@@ -266,7 +266,7 @@ export const Chessboard: React.FC<ChessboardProps> = ({
                 {/* Rank coordinate (top-left of square) */}
                 {showRankCoord && (
                   <span
-                    className={`absolute top-0.5 left-1 text-[10px] md:text-xs font-black leading-none pointer-events-none select-none ${
+                    className={`absolute top-0.5 left-0.5 sm:left-1 text-[9px] sm:text-[11px] md:text-xs font-black leading-none pointer-events-none select-none z-20 ${
                       isLightSquare ? 'text-[#769656]' : 'text-[#EEEED2]'
                     }`}
                   >
@@ -277,7 +277,7 @@ export const Chessboard: React.FC<ChessboardProps> = ({
                 {/* File coordinate (bottom-right of square) */}
                 {showFileCoord && (
                   <span
-                    className={`absolute bottom-0.5 right-1 text-[10px] md:text-xs font-black leading-none pointer-events-none select-none ${
+                    className={`absolute bottom-0.5 right-0.5 sm:right-1 text-[9px] sm:text-[11px] md:text-xs font-black leading-none pointer-events-none select-none z-20 ${
                       isLightSquare ? 'text-[#769656]' : 'text-[#EEEED2]'
                     }`}
                   >
@@ -319,7 +319,7 @@ export const Chessboard: React.FC<ChessboardProps> = ({
                   <div
                     draggable={interactive && (playerColor === 'both' || playerColor === piece.color)}
                     onDragStart={(e) => handleDragStart(e, square)}
-                    className="w-full h-full p-0.5 sm:p-1 flex items-center justify-center z-10 transition-transform active:scale-95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.18)]"
+                    className="w-full h-full p-0 sm:p-0.5 md:p-1 flex items-center justify-center z-10 transition-transform active:scale-95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.18)]"
                   >
                     <Piece type={piece.type as PieceType} color={piece.color as PieceColor} />
                   </div>
